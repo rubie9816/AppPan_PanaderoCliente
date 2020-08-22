@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="AppPan_PanaderoCliente.Views.Detalles">
+    <ContentPage.Content>
+        <Grid>
+            <Image Source="Pan.jpg" Aspect="AspectFill"></Image>
+            <BoxView Color="RosyBrown" Opacity="0.6"></BoxView>
+            <StackLayout>
+                <Label FontSize="Large" FontAttributes="Bold" TextColor="White" Text="Detalles" HorizontalOptions="Center"></Label>
+                <Label x:Name="tienda"></Label>
+                <Button x:Name="btnPedido" Text="Hacer pedido!" BackgroundColor="White" TextColor="Black" FontSize="Medium" HorizontalOptions="Center" Clicked="btnPedido_Clicked"></Button>
+                <ScrollView Grid.Row="1">
+                    <ListView  x:Name="listView" SeparatorColor="White">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <StackLayout Orientation="Vertical">
+                                        <StackLayout Orientation="Horizontal">
+                                            <Image Source="cliente.png" />
+                                            <Label Text="direccion1"></Label>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </ScrollView>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
